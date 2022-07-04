@@ -1735,7 +1735,7 @@ export default class Z80 extends Cpu {
 
 	jr(cond) {
 		const d = this.fetch();
-		if (cond) this.pc = this.pc + (d << 24 >> 24) & 0xffff;
+		if (cond) this.pc += (d << 24 >> 24) & 0xffff;
 	}
 
 	ret(cond) {
